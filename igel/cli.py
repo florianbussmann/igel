@@ -6,6 +6,7 @@ from igel import Igel, models_dict, metrics_dict, __version__
 import pandas as pd
 import subprocess
 from pathlib import Path
+from igel.colors import *
 
 
 class CLI(object):
@@ -486,6 +487,13 @@ Note: you can run the commands without providing additional arguments, which wil
         print(f"igel version: {__version__}")
 
     def info(self):
+        print('''%s      ____  __          __
+             / %s__%s \/ /_  ____  / /_____  ____
+            / %s/_/%s / __ \/ %s__%s \/ __/ %s__%s \/ __ \\
+           / ____/ / / / %s/_/%s / /_/ %s/_/%s / / / /
+          /_/   /_/ /_/\____/\__/\____/_/ /_/ %sv1.3.2%s\n''' %
+              (red, white, red, white, red, white, red, white, red, white, red, white,
+               red, white, end))
         print(f"""
             package name:           igel
             version:                {__version__}
